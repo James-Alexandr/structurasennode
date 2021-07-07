@@ -204,9 +204,62 @@ function getCharMap(string) {
     return charMap
 }
 
+
+function anagram4(stringA, stringB) {
+    /*First, we remove any non-alphabet character using regex and convert       
+    convert the strings to lowercase. */
+    stringA = stringA.replace(/[^\w]/g, '').toLowerCase()
+    stringB = stringB.replace(/[^\w]/g, '').toLowerCase()
+
+    return sortString(stringA) === sortString(stringB)
+}
+
+/*This function sorts the strings*/
+function sortString(string) {
+    return string.split('').sort().join('');
+}
+
+
+//#####################################################
+
+//naive oppeation
+function sumZero(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === 0) {
+                return [arr[i], arr[j]];
+            }
+        }
+    }
+}
+
+
+//good refactor
+
+function sumZero2(arr) {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left < right) {
+        let sum = arr[left] + arr[right];
+        if (sum === 0) {
+            return [arr[left], arr[right]];
+
+        } else if (sum > 0) {
+            right--;
+        } else {
+            left++;
+        }
+    }
+}
+
+
+console.log(sumZero2([-4, -3, -2, -1, 0, 1, 2, 5]));
+
+
 //console.log(anagram("iiii", "rewq"));
 //console.log(anagram2("hola", "laho"));
-console.log(anagram3("qwer", "rewq"));
+//console.log(anagram3("qwer", "rewq"));
+console.log(anagram4("qwer", "rewq"));
 
 
 //#####################################################
