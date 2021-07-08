@@ -1,8 +1,38 @@
 
-const readline = require('readline');
+//Notes for my students
+
 
 // program to count down numbers to 1
 const num = 4;
+
+
+//***************** sum range using loop ********************** */
+
+function sumRange(num) {
+    if (num === 1)
+        return 1;
+    console.log(num);
+    return num + sumRange(num - 1)
+
+}
+
+let totalsum = sumRange(num);
+console.log("The recursion of sum range of " + num + " is " + totalsum);
+
+//***************** sum range using loop ********************** */
+function sumRangeloop(num) {
+    let counter = 0;
+    for (let i = 1; i <= num; i++) {
+        console.log(i);
+        counter = counter + i;
+    }
+    return counter;
+}
+
+
+let total = sumRangeloop(num);
+console.log("The loop of sum range of " + num + " is " + total);
+
 
 //***************** countdown using recursion ********************** */
 
