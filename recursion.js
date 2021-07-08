@@ -134,3 +134,45 @@ function factorialLoop2(num) {
 
 let result2 = factorialLoop2(num);
 console.log(`The factorial of ${num} is ${result2}`);
+
+//***************** Collectiong odd values using recursion ********************** */
+
+function oddValues(arr) {
+
+    let result = [];
+
+    function looper(arrInput) {
+        if (arrInput.length === 0) {
+            return;
+        }
+        if (arrInput[0] % 2 !== 0) {
+            result.push(arrInput[0]);
+        }
+
+        looper(arrInput.slice(1))
+    }
+    looper(arr);
+    return result;
+}
+
+console.log(oddValues([1, 2, 3, 4, 5]));
+
+//***************** Collectiong odd values using recursion refactor ********************** */
+
+function oddValuesRecursion(arr) {
+    let result = [];
+    if (arr.length === 0) {
+        return result;
+    }
+
+    if (arr[0] % 2 !== 0) {
+        result.push(arr[0]);
+    }
+
+    result = result.concat(oddValuesRecursion(arr.slice(1)));
+
+    return result;
+
+}
+
+console.log(oddValuesRecursion([1, 2, 3, 4, 5]));
