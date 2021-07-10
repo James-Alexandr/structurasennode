@@ -101,3 +101,72 @@ function maxarraySum2(arr, num) {
 
 console.log(maxarraySum2([2, 6, 9, 2, 1, 8, 5, 6, 3], 3));
 
+function calculateDaysBetweenDates(begin, end) {
+    let date1 = new Date(begin);
+    let date2 = new Date(end);
+    let diff = date2.getTime() - date1.getTime();
+    let day = 1000 * 60 * 60 * 24;
+    return Math.round(diff / day);
+}
+
+function findLargestnumber(arr) {
+    let max = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+console.log(findLargestnumber([2, 6, 9, 2, 1, 8, 5, 6, 3], 3));
+
+function twoSum(arr, target) {
+    let i = 0;
+    let j = arr.length - 1;
+    while (i < j) {
+        let sum = arr[i] + arr[j];
+        if (sum === target) {
+            return [i, j];
+        } else if (sum > target) {
+            j--;
+        } else {
+            i++;
+        }
+    }
+}
+
+function reverseInterger(num) {
+    let reverse = 0;
+    while (num > 0) {
+        reverse = reverse * 10 + num % 10;
+        num = num / 10;
+    }
+    return reverse;
+}
+
+function mergeTwoSortedLists() {
+    let list1 = [1, 3, 5, 7, 9];
+    let list2 = [2, 4, 6, 8, 10];
+    let result = [];
+    let i = 0;
+    let j = 0;
+    while (i < list1.length && j < list2.length) {
+        if (list1[i] < list2[j]) {
+            result.push(list1[i]);
+            i++;
+        } else {
+            result.push(list2[j]);
+            j++;
+        }
+    }
+    while (i < list1.length) {
+        result.push(list1[i]);
+        i++;
+    }
+    while (j < list2.length) {
+        result.push(list2[j]);
+        j++;
+    }
+    return result;
+}
