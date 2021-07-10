@@ -33,3 +33,69 @@ function userlogin() {
         alert("Invalid username or password");
     }
 }
+
+function bigonotationcalculator() {
+    var number = prompt("Enter a number");
+    var power = prompt("Enter a power");
+    var result = Math.pow(number, power);
+    alert(result);
+}
+
+function BreadthFirstSearch(graph, start) {
+    var queue = [];
+    queue.push(start);
+    var visited = [];
+    visited[start] = true;
+    while (queue.length > 0) {
+        var vertex = queue.shift();
+        console.log(vertex);
+        for (var i = 0; i < graph[vertex].length; i++) {
+            if (!visited[graph[vertex][i]]) {
+                queue.push(graph[vertex][i]);
+                visited[graph[vertex][i]] = true;
+            }
+        }
+    }
+}
+
+function DFS(graph, start) {
+    var visited = [];
+    var stack = [];
+    stack.push(start);
+    while (stack.length > 0) {
+        var vertex = stack.pop();
+        if (!visited[vertex]) {
+            console.log(vertex);
+            visited[vertex] = true;
+            for (var i = 0; i < graph[vertex].length; i++) {
+                stack.push(graph[vertex][i]);
+            }
+        }
+    }
+}
+
+function BFS(graph, start) {
+    var visited = [];
+    var queue = [];
+    queue.push(start);
+    while (queue.length > 0) {
+        var vertex = queue.shift();
+        console.log(vertex);
+        for (var i = 0; i < graph[vertex].length; i++) {
+            if (!visited[graph[vertex][i]]) {
+                queue.push(graph[vertex][i]);
+                visited[graph[vertex][i]] = true;
+            }
+        }
+    }
+}
+
+function cache(fn) {
+    var cache = {};
+    return function (key) {
+        if (!cache[key]) {
+            cache[key] = fn(key);
+        }
+        return cache[key];
+    };
+}
