@@ -11,3 +11,10 @@ function insertionSort(arr) {
 }
 
 insertionSort([2, 1, 9, 76, 4])
+
+var data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random);
+
+var start = new Date().getTime();
+insertionSort(data);
+var end = new Date().getTime();
+console.log(end - start);

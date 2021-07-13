@@ -36,3 +36,26 @@ function selectionSort(arr) {
 }
 
 selectionSort([0, 2, 34, 22, 10, 19, 17]);
+
+
+
+function selectionSortai(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        var min = i;
+        for (var j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+            }
+        }
+        var temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
+    }
+}
+
+var data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random);
+
+var start = new Date().getTime();
+selectionSort(data);
+var end = new Date().getTime();
+console.log(end - start);
