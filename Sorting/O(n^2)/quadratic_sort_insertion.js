@@ -14,7 +14,9 @@ insertionSort([2, 1, 9, 76, 4])
 
 var data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random);
 
+console.log("RUNNING***");
 var start = new Date().getTime();
-insertionSort(data);
+var sorted = insertionSort(data);
+console.log(sorted);
 var end = new Date().getTime();
 console.log(end - start);

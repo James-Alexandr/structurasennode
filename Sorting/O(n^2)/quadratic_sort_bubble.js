@@ -70,9 +70,10 @@ var data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random)
 // var end = new Date().getTime();
 // console.log(end - start);
 
-console.log("*********************");
+console.log("RUNNING***");
 
 var start = new Date().getTime();
-bubbleSort(data);
+var sorted = bubbleSort(data);
+console.log(sorted);
 var end = new Date().getTime();
 console.log(end - start);

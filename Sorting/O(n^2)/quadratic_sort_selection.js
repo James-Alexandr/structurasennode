@@ -54,8 +54,9 @@ function selectionSortai(arr) {
 }
 
 var data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random);
-
+console.log("RUNNING***");
 var start = new Date().getTime();
-selectionSort(data);
+var sorted = selectionSort(data);
+console.log(sorted);
 var end = new Date().getTime();
 console.log(end - start);
