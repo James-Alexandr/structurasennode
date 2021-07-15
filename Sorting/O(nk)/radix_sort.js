@@ -29,5 +29,14 @@ function radixSort(nums) {
 }
 
 
-console.log(radixSort([23, 345, 5467, 12, 2345, 9852]));
+console.log(radixSort([23, 345, 5467, 12, 2345, 9852, 1, 0, -1, -23, -345, -5467, -12, -2345, -9852]));
 
+
+// Language: javascript
+var data = Array.apply(null, { length: 100000 }).map(Function.call, Math.random);
+console.log("RUNNING***");
+
+start = new Date().getTime();
+console.log(radixSort(data));
+end = new Date().getTime();
+console.log(end - start);
