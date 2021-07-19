@@ -1,3 +1,29 @@
+//pop removing the node from the end of the list
+//push adding the node to the end of the list
+//unshift adding the node to the beginning of the list  
+//shift removing the node from the beginning of the list
+//insert adding the node to the middle of the list
+//remove removing the node from the middle of the list
+//reverse reversing the list
+//print_list printing the list
+
+
+//to-do methods for the list:
+
+//sort sorting the list
+//get_size getting the size of the list 
+//is_empty checking if the list is empty
+//get_node_value getting the value of the node
+//set_node_value setting the value of the node
+//get_node_next getting the next node of the node
+//set_node_next setting the next node of the node
+//get_node_prev getting the previous node of the node
+//set_node_prev setting the previous node of the node
+//get_node_at getting the node at the index
+//set_node_at setting the node at the index
+//get_node_at_index getting the node at the index
+//set_node_at_index setting the node at the index
+
 class Node {
     constructor(val) {
         this.val = val;
