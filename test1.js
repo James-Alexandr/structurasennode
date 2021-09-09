@@ -1,1 +1,2 @@
-//write a function that generates ramdon number
+//hello world
+console.log(2 + 2);
