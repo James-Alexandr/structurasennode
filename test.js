@@ -52,3 +52,31 @@
 
 
 //write a program that genrates ramdon number
+//write a fucntion which takes in a string and returns counts of each character in the string
+
+function countChar(str, char) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === char) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countChar("hello", "l"));
+console.log(countChar("hello", "h"));
+
+//write a function that takes in a string and returns the number of vowels in the string
+
+function countVowels(str) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === "a" || str[i] === "e" || str[i] === "i" || str[i] === "o" || str[i] === "u") {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countVowels("hello"));
