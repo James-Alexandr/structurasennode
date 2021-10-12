@@ -111,3 +111,108 @@ stack.push(4);
 stack.pop();
 stack.peek();
 console.log(stack.printStack());
+
+//write a function that given a list of countries, returns the country that occur the least number of times.
+function leastOccur(arr) {
+
+    let count = {};
+    let least = Infinity;
+    let result;
+
+    for (let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+        count[num] = count[num] ? count[num] + 1 : 1;
+        if (count[num] < least) {
+            least = count[num];
+            result = num;
+        }
+    }
+
+    return result;
+}
+
+
+//write a function that given a list of countries, returns the country that occur the most number of times.
+function mostOccur(arr) {
+
+    let count = {};
+    let most = -Infinity;
+    let result;
+
+    for (let i = 0; i < arr.length; i++) {
+        let num = arr[i];
+        count[num] = count[num] ? count[num] + 1 : 1;
+        if (count[num] > most) {
+            most = count[num];
+            result = num;
+        }
+    }
+
+    return result;
+}
+
+
+console.log(mostOccur);
+
+ // function to combine two arrays
+    
+    function combine(arr1, arr2) {
+        let result = [];
+        let i = 0;
+        let j = 0;
+        while (i < arr1.length && j < arr2.length) {
+            if (arr1[i] < arr2[j]) {
+                result.push(arr1[i]);
+                i++;
+
+            } else {
+                result.push(arr2[j]);
+                j++;
+            }
+        }
+        while (i < arr1.length) {
+            result.push(arr1[i]);
+            i++;
+        }
+        while (j < arr2.length) {
+            result.push(arr2[j]);
+            j++;
+        }
+        return result;
+    }
+
+
+
+
+ //find the 2nd largest and 2nd smallest number in two arrays of numbers combined.
+
+    function findSecondLargest(arr) {
+        let largest = -Infinity;
+        let secondLargest = -Infinity;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                secondLargest = largest;
+                largest = arr[i];
+            } else if (arr[i] > secondLargest) {
+                secondLargest = arr[i];
+            }
+        }
+        return secondLargest;
+    }
+
+    function findSecondSmallest(arr) {
+        let smallest = Infinity;
+        let secondSmallest = Infinity;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] < smallest) {
+                secondSmallest = smallest;
+                smallest = arr[i];
+            } else if (arr[i] < secondSmallest) {
+                secondSmallest = arr[i];
+            }
+        }
+        return secondSmallest;
+    }
+
+  
+
