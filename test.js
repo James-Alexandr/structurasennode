@@ -130,15 +130,74 @@ function countVowels(str) {
 //an integer representing the minimum number of jumps required to reach the flag
 
 
-function minJumps(flagHeight, bigJump) {
-    let jumps = 0;
-    let height = 0;
-    while (height < flagHeight) {
-        jumps++;
-        height += bigJump;
-        if (height >= flagHeight) {
-            return jumps;
+// function minJumps(flagHeight, bigJump) {
+//     let jumps = 0;
+//     let height = 0;
+//     while (height < flagHeight) {
+//         jumps++;
+//         height += bigJump;
+//         if (height >= flagHeight) {
+//             return jumps;
+//         }
+//         height += 1;
+//     }
+// }
+
+//Create a function that says hi
+
+// function sayHi() {
+//     return "Hi";
+// }
+
+//Create a function that takes in a string and returns the first character of the string
+
+// function firstCharacter(str) {
+//     return str[0];
+// }
+
+//Create a function that takes in a string and returns the last character of the string
+
+// function lastCharacter(str) {
+//     return str[str.length - 1];
+// }
+
+//Create a function that takes in a string and returns the middle character of the string
+
+// function middleCharacter(str) {
+//     return str[Math.floor(str.length / 2)];
+// }
+
+//Create a function that takes in a string and returns the number of characters in the string
+
+// function numberOfCharacters(str) {
+//     return str.length;
+// }
+
+//Create a function that takes in a string and returns the number of vowels in the string
+
+//Given a number n, for each interger i in the range 1 to n inclusive, print one value per line as follows:
+// if i is a multiple of both 3 and 5, print "FizzBuzz"
+// if i is a multiple of 3(but not 5), print "Fizz"
+// if i is a multiple of 5(but not 3), print "Buzz"
+// if i is not a multiple of 3 or 5, print the value of i
+
+
+function fizzBuzz(n) {
+    for (let i = 1; i <= n; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+        } else if (i % 3 === 0) {
+            console.log("Fizz");
+        } else if (i % 5 === 0) {
+            console.log("Buzz");
+        } else {
+            console.log(i);
         }
-        height += 1;
     }
 }
+
+
+console.log(fizzBuzz(20));
+
+
+
