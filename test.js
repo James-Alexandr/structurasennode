@@ -201,3 +201,183 @@ console.log(fizzBuzz(20));
 
 
 
+//Write a function sortByAscending that accepts a string in JSON fromat, orders items by price in ascending order, if two produts have the same price, it orders them by name in alphabetical order, returns a string in JSON format that is equivalent to the one in the input format.
+
+
+function sortByAscending(str) {
+    let obj = JSON.parse(str);
+    let sorted = obj.sort((a, b) => {
+        if (a.price === b.price) {
+            return a.name > b.name ? 1 : -1;
+        } else {
+            return a.price > b.price ? 1 : -1;
+        }
+    });
+    return JSON.stringify(sorted);
+}
+
+console.log(sortByAscending('[{"name":"eggs","price":1},{"name":"coffee","price":9.99},{"name":"rice","price":4.04}]'));
+
+
+//Write a function that generates a list of 10,000 random numbers each time it is called. Each number in the list must be unique and must be between 1 and 10,000 (inclusive).
+
+
+function randomNumbers() {
+    let numbers = [];
+    for (let i = 0; i < 10000; i++) {
+        let number = Math.floor(Math.random() * 10000) + 1;
+        if (numbers.indexOf(number) === -1) {
+            numbers.push(number);
+        } else {
+            i--;
+        }
+    }
+    return numbers;
+
+}
+
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 1: ' + diff + ' ms');
+
+function randomNumbers2() {
+    let arr = [];
+    for (let i = 0; i < 10000; i++) {
+        let num = Math.floor(Math.random() * 10000) + 1;
+        if (arr.includes(num)) {
+            i--;
+        } else {
+            arr.push(num);
+        }
+    }
+    return arr;
+}
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers2());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 2: ' + diff + ' ms');
+
+
+
+function randomNumbers3() {
+    let arr = [];
+    for (let i = 0; i < 10000; i++) {
+        let num = Math.floor(Math.random() * 10000 + 1);
+        if (arr.includes(num)) {
+            i--;
+        } else {
+            arr.push(num);
+        }
+    }
+    return arr;
+}
+
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers3());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 3: ' + diff + ' ms');
+
+
+function randomNumbers4() {
+    let arr = [];
+    for (let i = 0; i < 10000; i++) {
+        let num = Math.floor(Math.random() * 10000) + 1;
+        if (arr.indexOf(num) === -1) {
+            arr.push(num);
+        } else {
+            i--;
+        }
+    }
+    return arr;
+}
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers4());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 4: ' + diff + ' ms');
+
+function randomNumbers5() {
+    let arr = [];
+    for (let i = 0; i < 10000; i++) {
+        let num = Math.floor(Math.random() * 10000 + 1);
+        if (arr.indexOf(num) === -1) {
+            arr.push(num);
+        } else {
+            i--;
+        }
+    }
+    return arr;
+}
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers5());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 5: ' + diff + ' ms');
+
+function randomNumbers6() {
+    let nums = [];
+    for (let i = 0; i < 10000; i++) {
+        let num = Math.floor(Math.random() * 10000) + 1;
+        if (nums.includes(num)) {
+            i--;
+        } else {
+            nums.push(num);
+        }
+    }
+    return nums;
+}
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers6());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 6: ' + diff + ' ms');
+
+
+function randomNumbers7() {
+    let list = [];
+    for (let i = 0; i < 10000; i++) {
+        let num = Math.floor(Math.random() * 10000) + 1;
+        if (list.includes(num)) {
+            i--;
+        } else {
+            list.push(num);
+        }
+    }
+    return list;
+}
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers7());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 7: ' + diff + ' ms');
+
+
+function randomNumbers8() {
+    let list = [];
+    for (let i = 0; i < 10000; i++) {
+        let num = Math.floor(Math.random() * 10000 + 1);
+        if (list.includes(num)) {
+            i--;
+        } else {
+            list.push(num);
+        }
+    }
+    return list;
+}
+
+var start = +new Date();  // log start timestamp
+console.log(randomNumbers8());
+var end = +new Date();  // log end timestamp
+var diff = end - start;
+console.log('Execution time 8: ' + diff + ' ms');
